@@ -1107,8 +1107,41 @@ public class District {
  			return false; 
  		case "Batticaloa": 
  			return false; 
-		default:
+ 		/**
+		 * Nepal
+		 */
+		case "Patan":
 			return false;
+		case "Jayapritvi":
+			return false;
+		case "Kankri":
+			return false;
+		case "Kathmandu":
+			return false;
+		case "Dharan":
+			return false;
+		case "Dhamak":
+			return false;
+		/**
+		 * Bhutan
+		 */
+		case "Thimphu":
+			return false;
+		/**
+		 * Bangladesh
+		 */
+		case "Rajshahi":
+			return true;
+		case "Habiganj":
+			return true;
+		case "Dhaka":
+			return true;
+		case "Khulna":
+			return true;
+		case "Chittagong":
+			return true;
+		default:
+			return true;
 		}
 	}
 
@@ -1588,6 +1621,39 @@ public class District {
  			return false; 
  		case "Batticaloa": 
  			return false;
+ 		 		/**
+		 * Nepal
+		 */
+		case "Patan":
+			return false;
+		case "Jayapritvi":
+			return false;
+		case "Kankri":
+			return false;
+		case "Kathmandu":
+			return false;
+		case "Dharan":
+			return false;
+		case "Dhamak":
+			return false;
+		/**
+		 * Bhutan
+		 */
+		case "Thimphu":
+			return false;
+		/**
+		 * Bangladesh
+		 */
+		case "Rajshahi":
+			return false;
+		case "Habiganj":
+			return false;
+		case "Dhaka":
+			return true;
+		case "Khulna":
+			return false;
+		case "Chittagong":
+			return true;
 		default:
 			return false;
 		}
