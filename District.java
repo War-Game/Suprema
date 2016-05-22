@@ -629,6 +629,9 @@ public class District {
 		case "Lashkargah":
 			return new int[] { 60, 455 };
 		}
+		/**
+		 * 
+		 * **
 	}
 
 	/**
@@ -1374,7 +1377,7 @@ public class District {
 		case "Yichun":
 			return false;
 		case "Nanjing":
-			return false;
+			return true;
 		case "Heifei":
 			return false;
 		case "Huainan":
@@ -1789,7 +1792,7 @@ public class District {
 		case "Gerze":
 			return false;
 		case "Kashgar":
-			return false;
+			return true;
 		case "Aksu":
 			return false;
 		case "Yili":
@@ -1813,7 +1816,7 @@ public class District {
 		case "Yichun":
 			return false;
 		case "Nanjing":
-			return false;
+			return true;
 		case "Heifei":
 			return false;
 		case "Huainan":
@@ -1825,7 +1828,7 @@ public class District {
 		case "Bayingol":
 			return false;
 		case "Urumqi":
-			return false;
+			return true;
 		case "Ruoqiang":
 			return false;
 		case "Dulan":
