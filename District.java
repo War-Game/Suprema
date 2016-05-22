@@ -629,9 +629,6 @@ public class District {
 		case "Lashkargah":
 			return new int[] { 60, 455 };
 		}
-		/**
-		 * 
-		 * **
 	}
 
 	/**
@@ -1099,6 +1096,17 @@ public class District {
 			return true;
 		case "Faisalabad":
 			return false;
+		/** 
+ 		 * Sri Lanka 
+ 		 */ 
+ 		case "Kandy": 
+ 			return true; 
+ 		case "Colombo": 
+ 			return true; 
+ 		case "Arunadhapura": 
+ 			return false; 
+ 		case "Batticaloa": 
+ 			return false; 
 		default:
 			return false;
 		}
@@ -1569,6 +1577,17 @@ public class District {
 			return true;
 		case "Faisalabad":
 			return false;
+		/** 
+ 		 * Sri Lanka 
+ 		 */ 
+ 		case "Kandy": 
+ 			return false; 
+ 		case "Colombo": 
+ 			return true; 
+ 		case "Arunadhapura": 
+ 			return false; 
+ 		case "Batticaloa": 
+ 			return false;
 		default:
 			return false;
 		}
@@ -2039,6 +2058,17 @@ public class District {
 			return false;
 		case "Faisalabad":
 			return false;
+		/** 
+ 		 * Sri Lanka 
+ 		 */ 
+ 		case "Kandy": 
+ 			return false; 
+ 		case "Colombo": 
+ 			return false; 
+ 		case "Arunadhapura": 
+ 			return false; 
+ 		case "Batticaloa": 
+ 			return true; 
 		default:
 			return false;
 		}
