@@ -1111,13 +1111,13 @@ public class District {
 		 * Nepal
 		 */
 		case "Patan":
-			return false;
+			return true;
 		case "Jayapritvi":
 			return false;
 		case "Kankri":
 			return false;
 		case "Kathmandu":
-			return false;
+			return true;
 		case "Dharan":
 			return false;
 		case "Dhamak":
@@ -1126,7 +1126,7 @@ public class District {
 		 * Bhutan
 		 */
 		case "Thimphu":
-			return false;
+			return true;
 		/**
 		 * Bangladesh
 		 */
@@ -1621,7 +1621,7 @@ public class District {
  			return false; 
  		case "Batticaloa": 
  			return false;
- 		 		/**
+ 		 /**
 		 * Nepal
 		 */
 		case "Patan":
@@ -1631,7 +1631,7 @@ public class District {
 		case "Kankri":
 			return false;
 		case "Kathmandu":
-			return false;
+			return true;
 		case "Dharan":
 			return false;
 		case "Dhamak":
@@ -1640,7 +1640,7 @@ public class District {
 		 * Bhutan
 		 */
 		case "Thimphu":
-			return false;
+			return true;
 		/**
 		 * Bangladesh
 		 */
@@ -2135,11 +2135,11 @@ public class District {
  			return false; 
  		case "Batticaloa": 
  			return true;
- 		 		/**
+ 		 /**
 		 * Nepal
 		 */
 		case "Patan":
-			return false;
+			return true;
 		case "Jayapritvi":
 			return false;
 		case "Kankri":
@@ -2154,7 +2154,7 @@ public class District {
 		 * Bhutan
 		 */
 		case "Thimphu":
-			return false;
+			return true;
 		/**
 		 * Bangladesh
 		 */
