@@ -36,31 +36,50 @@ public class Troop extends JPanel implements Comparable<Troop> {
 		ID = division_Name;
 		XP = level;
 		loc = recruit;
-		if(loc != null)
+		if (loc != null)
 			x = loc.getX();
-			y = loc.getY();
+		y = loc.getY();
 		HP = 150 + XP * 4;
-		if(this instanceof Tank)
-			findImage("executable//Tank_" + nationality.getName()+ ".png");
-		else if(this instanceof ArmoredDivision)
-			findImage("executable//Armored Car_" + nationality.getName()+ ".png");
-		else if(this instanceof Artillery)
+		if (this instanceof Tank)
+			findImage("executable//Tank_" + nationality.getName() + ".png");
+		else if (this instanceof ArmoredDivision)
+			findImage("executable//Armored Car_" + nationality.getName() + ".png");
+		else if (this instanceof Artillery)
 			findImage("executable//Artillery_.png");
 		else
 			findImage("executable//Infantry_" + nationality.getName().toLowerCase() + ".png");
 	}
-	
-	public String getStatus()
-	{
-		return "";
+
+	public String getStatus() {
+		String s = "";
+		if (this instanceof Troop)
+			s = "Troop\n";
+		if (this instanceof Tank)
+			s = "Tank\n";
+		if (this instanceof HeavyTank)
+			s = "HeavyTank\n";
+		if (this instanceof SPG)
+			s = "SPG\n";
+		if (this instanceof Artillery)
+			s = "Artillery\n";
+		if (this instanceof Cavalry)
+			s = "Cavalry\n";
+		if (this instanceof ArmoredDivision)
+			s = "ArmoredDivision";
+		if (this instanceof RocketArtillery)
+			s = "RocketArtllery";
+		if (this instanceof Commando)
+			s = "Commando";
+		return s + "level: " + XP + "\n" + "HP: " + HP + "\n" + "Attack Power: " + getAttackPower() + "\n" + "morale: "
+				+ morale + "\n";
 	}
 
 	public void findImage(String name) {
 		try {
-			if((new File(name)).exists())
+			if ((new File(name)).exists())
 				image = (ImageIO.read(new File(name)));
-			else if((new File(name.replace(nationality.getName(),""))).exists())
-				image = (ImageIO.read(new File(name.replace(nationality.getName(),""))));
+			else if ((new File(name.replace(nationality.getName(), ""))).exists())
+				image = (ImageIO.read(new File(name.replace(nationality.getName(), ""))));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -72,20 +91,20 @@ public class Troop extends JPanel implements Comparable<Troop> {
 		super.paintComponent(g);
 		if (image != null) {
 			g.drawImage(getImage(), x - image.getWidth() / 2, y - image.getHeight() + 5, null);
-			if(this instanceof Commando)
+			if (this instanceof Commando)
 				g.drawString("C", x, y);
-			if(this instanceof HeavyTank)
+			if (this instanceof HeavyTank)
 				g.drawString("H", x, y);
-			if(this instanceof SPG)
+			if (this instanceof SPG)
 				g.drawString("SPG", x, y);
-			if(this instanceof RocketArtillery)
+			if (this instanceof RocketArtillery)
 				g.drawString("R", x, y);
 		}
 		g.setColor(null);
 	}
 
 	public int getCost() {
-		if(!fake)
+		if (!fake)
 			return 100;
 		else
 			return 50;
@@ -125,11 +144,11 @@ public class Troop extends JPanel implements Comparable<Troop> {
 	}
 
 	public void gainBattleXP(Troop defeated) {
-		if(defeated instanceof HeavyTank)
+		if (defeated instanceof HeavyTank)
 			XP += .7;
 		if (defeated instanceof Tank)
 			XP += .55;
-		else if(defeated instanceof ArmoredDivision)
+		else if (defeated instanceof ArmoredDivision)
 			XP += .4;
 		else if (defeated instanceof Artillery)
 			XP += .3;
@@ -207,7 +226,8 @@ public class Troop extends JPanel implements Comparable<Troop> {
 	}
 
 	private boolean canMoveTo(District d) {
-		return Math.sqrt((x - d.getX()) * (x - d.getX()) + (y - d.getY()) * (y - d.getY())) <= getRange() && !d.isOccupied();
+		return Math.sqrt((x - d.getX()) * (x - d.getX()) + (y - d.getY()) * (y - d.getY())) <= getRange()
+				&& !d.isOccupied();
 	}
 
 	/**
