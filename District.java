@@ -1034,7 +1034,7 @@ public class District {
 		case "Changang-Do":
 			return false;
 		case "Yanggan-Do":
-			return true;
+			return false;
 		case "Hamgyong-Bukto":
 			return false;
 		case "PiYongang Namdo":
@@ -1055,7 +1055,7 @@ public class District {
 		case "Seoul":
 			return true;
 		case "Gangwon":
-			return true;
+			return false;
 		case "Mitan-myeon":
 			return false;
 		case "Andong":
@@ -1065,9 +1065,9 @@ public class District {
 		case "Gwangju":
 			return false;
 		case "Daegu":
-			return false;
-		case "Daejon":
 			return true;
+		case "Daejon":
+			return false;
 		default:
 			return false;
 		}
@@ -1473,7 +1473,7 @@ public class District {
 		case "Changang-Do":
 			return false;
 		case "Yanggan-Do":
-			return true;
+			return false;
 		case "Hamgyong-Bukto":
 			return false;
 		case "PiYongang Namdo":
@@ -1494,19 +1494,19 @@ public class District {
 		case "Seoul":
 			return true;
 		case "Gangwon":
-			return true;
+			return false;
 		case "Mitan-myeon":
 			return false;
 		case "Andong":
 			return false;
 		case "Busan":
-			return true;
+			return false;
 		case "Gwangju":
 			return false;
 		case "Daegu":
 			return false;
 		case "Daejon":
-			return true;
+			return false;
 		default:
 			return false;
 		}
@@ -1912,7 +1912,7 @@ public class District {
 		case "Changang-Do":
 			return false;
 		case "Yanggan-Do":
-			return true;
+			return false;
 		case "Hamgyong-Bukto":
 			return false;
 		case "PiYongang Namdo":
@@ -1929,11 +1929,11 @@ public class District {
 		 * South Korea
 		 */
 		case "Incheon":
-			return true;
+			return false;
 		case "Seoul":
-			return true;
+			return false;
 		case "Gangwon":
-			return true;
+			return false;
 		case "Mitan-myeon":
 			return false;
 		case "Andong":
@@ -1943,9 +1943,9 @@ public class District {
 		case "Gwangju":
 			return false;
 		case "Daegu":
-			return false;
-		case "Daejon":
 			return true;
+		case "Daejon":
+			return false;
 		default:
 			return false;
 		}
