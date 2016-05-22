@@ -564,7 +564,7 @@ public class District {
 		case "Khyber":
 			return new int[] { 140, 414 };
 		case "Multan":
-			return new int[] { 145, 471 };
+			return new int[] { 145, 471 ;}
 		case "Faisalabad":
 			return new int[] { 159, 436 };
 		/**
