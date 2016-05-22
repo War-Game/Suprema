@@ -16,6 +16,7 @@ import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
+
 @SuppressWarnings("serial")
 public class ControlPanel extends JFrame {
 	private JButton addTroop, addTank, addArtillery, addRocketArtillery, addSPG, addCommando, addHeavyTank, endTurn,
@@ -31,7 +32,7 @@ public class ControlPanel extends JFrame {
 		setSize(400, 800);
 		setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 		// create a new panel with GridBagLayout manager
-		wealth = new JLabel("");
+		wealth = new JLabel("Purchasing Power: "+board.getChosen().getWealth());
 		getTroop = new JButton("Get the Troop");
 		update_district = new JButton("Update District");
 		addTroop = new JButton("Add Troop");
@@ -42,7 +43,6 @@ public class ControlPanel extends JFrame {
 		addSPG = new JButton("Add SPG");
 		addCommando = new JButton("Add Commando");
 		endTurn = new JButton("End Turn");
-		// JPanel newPanel = new JPanel(new GridLayout());
 		setLayout(new GridLayout(40, 10));
 		add(addTroop);
 		add(addTank);
@@ -88,6 +88,8 @@ public class ControlPanel extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(findDistrict(board.getChosen(), (String) Select_Districts.getSelectedItem()) == null)
 					JOptionPane.showMessageDialog(null,"There is no Troop at this district");
+				else
+					JOptionPane.showMessageDialog(null,"");
 			}
 		});
 		update_district.addActionListener(new ActionListener() {
