@@ -16,7 +16,6 @@ import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
-
 @SuppressWarnings("serial")
 public class ControlPanel extends JFrame {
 	private JButton addTroop, addTank, addArtillery, addRocketArtillery, addSPG, addCommando, addHeavyTank, endTurn,
@@ -32,8 +31,8 @@ public class ControlPanel extends JFrame {
 		setSize(400, 800);
 		setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 		// create a new panel with GridBagLayout manager
-		wealth = new JLabel("Purchasing Power: "+board.getChosen().getWealth());
-		getTroop = new JButton("Get the Troop");
+		wealth = new JLabel("Purchasing Power: " + board.getChosen().getWealth());
+		getTroop = new JButton("View Troop Status");
 		update_district = new JButton("Update District");
 		addTroop = new JButton("Add Troop");
 		addTank = new JButton("Add Tank");
@@ -54,7 +53,7 @@ public class ControlPanel extends JFrame {
 		add(endTurn);
 		add(update_district);
 		add(getTroop);
-		
+
 		String[] district = new String[board.getChosen().getDistricts().size()];
 		for (int i = 0; i < district.length; i++) {
 			district[i] = board.getChosen().getDistricts().get(i).getName();
@@ -83,13 +82,16 @@ public class ControlPanel extends JFrame {
 			coordinates = null;
 			status = null;
 		}
-		
+
 		getTroop.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(findDistrict(board.getChosen(), (String) Select_Districts.getSelectedItem()) == null)
-					JOptionPane.showMessageDialog(null,"There is no Troop at this district");
+				if(board.getChosen().getDistricts().size() == 0)
+					JOptionPane.showMessageDialog(null, "There are no districts");
+				else if (findDistrict(board.getChosen(), (String) Select_Districts.getSelectedItem()).getTroop() == null)
+					JOptionPane.showMessageDialog(null, "There is no Troop at this district");
 				else
-					JOptionPane.showMessageDialog(null,"");
+					JOptionPane.showMessageDialog(null, "The selected Troop has the current status: "
+							+ findDistrict(board.getChosen(), (String) Select_Districts.getSelectedItem()).getTroop().getStatus());
 			}
 		});
 		update_district.addActionListener(new ActionListener() {
