@@ -1068,6 +1068,37 @@ public class District {
 			return true;
 		case "Daejon":
 			return false;
+		/**
+		 * Pakistan
+		 */
+		case "Peshawar":
+			return true;
+		case "Islamabad":
+			return true;
+		case "Rawalpindi":
+			return true;
+		case "Lahore":
+			return true;
+		case "Bahawalpur":
+			return false;
+		case "Kharipur":
+			return false;
+		case "Nawabshah":
+			return false;
+		case "Karachi":
+			return true;
+		case "Hyderbad":
+			return false;
+		case "Balochistan":
+			return false;
+		case "Quetta":
+			return false;
+		case "Khyber":
+			return false;
+		case "Multan":
+			return true;
+		case "Faisalabad":
+			return false;
 		default:
 			return false;
 		}
@@ -1507,6 +1538,37 @@ public class District {
 			return false;
 		case "Daejon":
 			return false;
+		/**
+		 * Pakistan
+		 */
+		case "Peshawar":
+			return false;
+		case "Islamabad":
+			return false;
+		case "Rawalpindi":
+			return false;
+		case "Lahore":
+			return false;
+		case "Bahawalpur":
+			return false;
+		case "Kharipur":
+			return false;
+		case "Nawabshah":
+			return false;
+		case "Karachi":
+			return true;
+		case "Hyderbad":
+			return false;
+		case "Balochistan":
+			return false;
+		case "Quetta":
+			return false;
+		case "Khyber":
+			return false;
+		case "Multan":
+			return true;
+		case "Faisalabad":
+			return false;
 		default:
 			return false;
 		}
@@ -1945,6 +2007,37 @@ public class District {
 		case "Daegu":
 			return true;
 		case "Daejon":
+			return false;
+		/**
+		 * Pakistan
+		 */
+		case "Peshawar":
+			return false;
+		case "Islamabad":
+			return false;
+		case "Rawalpindi":
+			return false;
+		case "Lahore":
+			return false;
+		case "Bahawalpur":
+			return false;
+		case "Kharipur":
+			return false;
+		case "Nawabshah":
+			return true;
+		case "Karachi":
+			return false;
+		case "Hyderbad":
+			return false;
+		case "Balochistan":
+			return false;
+		case "Quetta":
+			return false;
+		case "Khyber":
+			return false;
+		case "Multan":
+			return false;
+		case "Faisalabad":
 			return false;
 		default:
 			return false;
