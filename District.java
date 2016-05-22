@@ -2134,7 +2134,40 @@ public class District {
  		case "Arunadhapura": 
  			return false; 
  		case "Batticaloa": 
- 			return true; 
+ 			return true;
+ 		 		/**
+		 * Nepal
+		 */
+		case "Patan":
+			return false;
+		case "Jayapritvi":
+			return false;
+		case "Kankri":
+			return false;
+		case "Kathmandu":
+			return false;
+		case "Dharan":
+			return false;
+		case "Dhamak":
+			return false;
+		/**
+		 * Bhutan
+		 */
+		case "Thimphu":
+			return false;
+		/**
+		 * Bangladesh
+		 */
+		case "Rajshahi":
+			return false;
+		case "Habiganj":
+			return false;
+		case "Dhaka":
+			return false;
+		case "Khulna":
+			return true;
+		case "Chittagong":
+			return false;
 		default:
 			return false;
 		}
