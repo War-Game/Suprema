@@ -1140,6 +1140,23 @@ public class District {
 			return true;
 		case "Chittagong":
 			return true;
+		/**
+		 * Afghanistan
+		 */
+		case "Jalalabad":
+			return true;
+		case "Kabul":
+			return true;
+		case "Kunduz":
+			return false;
+		case "Mazar-e-Shariff":
+			return true;
+		case "Herat":
+			return false;
+		case "Pasaband":
+			return false;
+		case "Lashkargah":
+			return false;
 		default:
 			return true;
 		}
@@ -1654,6 +1671,23 @@ public class District {
 			return false;
 		case "Chittagong":
 			return true;
+		/**
+		 * Afghanistan
+		 */
+		case "Jalalabad":
+			return false;
+		case "Kabul":
+			return true;
+		case "Kunduz":
+			return false;
+		case "Mazar-e-Shariff":
+			return true;
+		case "Herat":
+			return false;
+		case "Pasaband":
+			return false;
+		case "Lashkargah":
+			return false;
 		default:
 			return false;
 		}
@@ -2168,6 +2202,23 @@ public class District {
 			return true;
 		case "Chittagong":
 			return false;
+		/**
+		 * Afghanistan
+		 */
+		case "Jalalabad":
+			return false;
+		case "Kabul":
+			return false;
+		case "Kunduz":
+			return true;
+		case "Mazar-e-Shariff":
+			return false;
+		case "Herat":
+			return false;
+		case "Pasaband":
+			return false;
+		case "Lashkargah":
+			return true;
 		default:
 			return false;
 		}
