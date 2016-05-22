@@ -1083,13 +1083,13 @@ public class District {
 		case "Delhi":
 			return true;
 		case "Haryana":
-			return true;
+			return false;
 		case "Bathinda":
 			return false;
 		case "Amritsar":
 			return true;
 		case "Jammu":
-			return true;
+			return false;
 		case "Kashmir Valley":
 			return false;
 		case "Ladakh":
@@ -1101,13 +1101,13 @@ public class District {
 		case "Uttrakhand":
 			return false;
 		case "Derhadun":
-			return true;
+			return false;
 		case "Agra":
-			return true;
+			return false;
 		case "Kanpur":
-			return true;
+			return false;
 		case "Allahabad":
-			return true;
+			return false;
 		case "Jaipur":
 			return true;
 		case "Ajmer":
@@ -1122,31 +1122,31 @@ public class District {
 			return false;
 		// but wait, there's more!
 		case "Vadodara":
-			return true;
+			return false;
 		case "Surat":
-			return true;
+			return false;
 		case "Mumbai":
 			return true;
 		case "Godhra":
 			return false;
 		case "Bhopal":
-			return true;
+			return false;
 		case "Jalagaon":
 			return false;
 		case "Aurangabad":
 			return false;
 		case "Poona":
-			return true;
+			return false;
 		case "Goa":
-			return true;
+			return false;
 		case "Mangalore":
 			return false;
 		case "Kochi":
-			return true;
+			return false;
 		case "Thiruvananthapuram":
-			return true;
+			return false;
 		case "Madurai":
-			return true;
+			return false;
 		case "Tirucirappali":
 			return false;
 		case "Puducherry":
@@ -1170,9 +1170,9 @@ public class District {
 		case "Silliguri":
 			return false;
 		case "Sikkim":
-			return true;
+			return false;
 		case "Guwahati":
-			return true;
+			return false;
 		case "Tezpur":
 			return false;
 		case "Arunachal Pradesh":
@@ -1184,9 +1184,9 @@ public class District {
 		case "Muzaffarpur":
 			return false;
 		case "Patna":
-			return true;
+			return false;
 		case "Gaya":
-			return true;
+			return false;
 		case "Ranchi":
 			return true;
 		case "Jamshedpur":
@@ -1196,7 +1196,7 @@ public class District {
 		case "Bliaspur":
 			return false;
 		case "Raipur":
-			return true;
+			return false;
 		case "Jagdalpur":
 			return false;
 		case "Jaisalmer":
@@ -1204,7 +1204,7 @@ public class District {
 		case "Palanpur":
 			return false;
 		case "Hubli":
-			return true;
+			return false;
 		case "Bangalore":
 			return true;
 		case "Kozhikode":
@@ -1232,7 +1232,7 @@ public class District {
 		case "Chandrapur":
 			return false;
 		case "Jhansi":
-			return true;
+			return false;
 		case "Rewa":
 			return false;
 		case "Jabalpur":
@@ -1252,7 +1252,7 @@ public class District {
 		case "Kota":
 			return true;
 		case "Bhagalpur":
-			return true;
+			return false;
 		case "Tripura":
 			return false;
 		case "Nizamabad":
@@ -1520,70 +1520,70 @@ public class District {
 	public boolean hasAirfield() {
 		switch (name) {
 		case "Delhi":
-			return true;
+			return false;
 		case "Haryana":
-			return true;
+			return false;
 		case "Bathinda":
 			return false;
 		case "Amritsar":
-			return true;
+			return false;
 		case "Jammu":
-			return true;
+			return false;
 		case "Kashmir Valley":
 			return false;
 		case "Ladakh":
-			return false;
+			return true;
 		case "Aksai Chin":
 			return false;
 		case "Himachal":
-			return true;
+			return false;
 		case "Uttrakhand":
 			return false;
 		case "Derhadun":
-			return true;
+			return false;
 		case "Agra":
-			return true;
+			return false;
 		case "Kanpur":
 			return true;
 		case "Allahabad":
-			return true;
-		case "Jaipur":
-			return true;
-		case "Ajmer":
 			return false;
+		case "Jaipur":
+			return false;
+		case "Ajmer":
+			return true;
 		case "Jodhpur":
 			return false;
 		case "Ahmedabad":
-			return true;
+			return false;
 		case "Rann of Kutch":
 			return false;
 		case "Rajkot":
 			return false;
 		// but wait, there's more!
 		case "Vadodara":
-			return true;
+			return false;
 		case "Surat":
-			return true;
+			return false;
 		case "Mumbai":
-			return true;
+			return false;
 		case "Godhra":
 			return false;
 		case "Bhopal":
-			return true;
+			return false;
 		case "Jalagaon":
 			return false;
 		case "Aurangabad":
 			return false;
 		case "Poona":
-			return true;
+			return false;
 		case "Goa":
-			return true;
+			return false;
 		case "Mangalore":
 			return false;
 		case "Kochi":
-			return true;
+			return false;
 		case "Thiruvananthapuram":
-			return true;
+			return false;
 		case "Madurai":
 			return true;
 		case "Tirucirappali":
@@ -1603,7 +1603,7 @@ public class District {
 		case "Rourkela":
 			return false;
 		case "Kolkatta":
-			return true;
+			return false;
 		case "Asansol":
 			return false;
 		case "Silliguri":
@@ -1611,43 +1611,43 @@ public class District {
 		case "Sikkim":
 			return true;
 		case "Guwahati":
-			return true;
+			return false;
 		case "Tezpur":
 			return false;
 		case "Arunachal Pradesh":
-			return false;
+			return true;
 		case "Imphal":
-			return false;
+			return true;
 		case "Mizoram":
 			return false;
 		case "Muzaffarpur":
 			return false;
 		case "Patna":
-			return true;
+			return false;
 		case "Gaya":
-			return true;
+			return false;
 		case "Ranchi":
-			return true;
+			return false;
 		case "Jamshedpur":
-			return true;
+			return false;
 		case "Sitapur":
 			return false;
 		case "Bliaspur":
 			return false;
 		case "Raipur":
-			return true;
+			return false;
 		case "Jagdalpur":
 			return false;
 		case "Jaisalmer":
-			return false;
+			return true;
 		case "Palanpur":
 			return false;
 		case "Hubli":
-			return true;
-		case "Bangalore":
-			return true;
-		case "Kozhikode":
 			return false;
+		case "Bangalore":
+			return false;
+		case "Kozhikode":
+			return true;
 		case "Tirupati":
 			return false;
 		case "Cuddupa":
@@ -1657,27 +1657,27 @@ public class District {
 		case "Mysore":
 			return false;
 		case "Hyderabad":
-			return true;
+			return false;
 		case "Vijayapura":
 			return false;
 		case "Solapur":
 			return false;
 		case "Nanded":
-			return false;
+			return true;
 		case "Suryapet":
 			return false;
 		case "Nagpur":
-			return true;
+			return false;
 		case "Chandrapur":
 			return false;
 		case "Jhansi":
-			return true;
+			return false;
 		case "Rewa":
 			return false;
 		case "Jabalpur":
 			return false;
 		case "Gwalior":
-			return true;
+			return false;
 		case "Merut":
 			return false;
 		case "Lucknow":
@@ -1691,15 +1691,15 @@ public class District {
 		case "Kota":
 			return true;
 		case "Bhagalpur":
-			return true;
-		case "Tripura":
 			return false;
+		case "Tripura":
+			return true;
 		case "Nizamabad":
 			return false;
 		case "Balangir":
 			return false;
 		case "Ganghinagar":
-			return true;
+			return false;
 		/*
 		 * Chinese Districts here
 		 */
