@@ -35,7 +35,8 @@ import javax.swing.JPanel;
 public class WarGameBoard extends JPanel {
 	private static BufferedImage image;
 	private static Nation chosen;
-	private int x, y;
+	private int x, y
+	private boolean showTitle = true;
 	private static WarGameBoard w = new WarGameBoard();
 	private static Nation[] nations = new Nation[] { new Nation("Russia"), new Nation("Mongolia"),
 			new Nation("North Korea"), new Nation("South Korea"), new Nation("Japan"), new Nation("Taiwan"),
@@ -57,6 +58,7 @@ public class WarGameBoard extends JPanel {
 		addMouseListener(new MouseAdapter() {
 			public void mousePressed(MouseEvent me) {
 				// Get x,y and store them
+				showTitle = false;
 				x = me.getX();
 				y = me.getY();
 				repaint();
@@ -123,6 +125,10 @@ public class WarGameBoard extends JPanel {
 	 */
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
+		if(showTitle)
+			image = ImageIO.readFile(new File("executable//titleScreenImage.png"));
+		else
+			image = ImageIO.readFile(new File("executable//AsiaMap4.png"));
 		g.drawImage(image, 0, 0, null);
 		g.setColor(Color.WHITE);
 		g.setFont(new Font("Consolas", Font.PLAIN, 18));
