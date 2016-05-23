@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
 public class Nation {
 	private String Name;
 	private WarGameBoard ref;
@@ -34,7 +36,14 @@ public class Nation {
 			setArmoredCars();
 		}
 	}
-	
+
+	public void killAllTroops() {
+		for (int i = 0; i < troops.size(); i++) {
+			troops.get(i).die();
+		}
+		troops.clear();
+	}
+
 	public ArrayList<Troop> getTroops() {
 		return troops;
 	}
@@ -42,6 +51,10 @@ public class Nation {
 	public void add(Troop troop) {
 		purchase(troop);
 		troops.add(troop);
+	}
+
+	protected int getPPPWealth() {
+		return PPPWealth;
 	}
 
 	public String getName() {
@@ -64,11 +77,17 @@ public class Nation {
 	public void purchase(Troop t) {
 		if (canBuy(t))
 			PPPWealth -= t.getCost();
+		else
+			setMessage("You cannot buy this Troop");
 	}
 
 	public void purchase(int cost) {
 		if (canBuy(cost))
 			PPPWealth -= cost;
+	}
+
+	protected void setMessage(String message) {
+		JOptionPane.showMessageDialog(null, "Problem!", message, JOptionPane.INFORMATION_MESSAGE, null);
 	}
 
 	public void setTroops() {
@@ -92,7 +111,7 @@ public class Nation {
 			}
 			break;
 		case "China":
-			for (int i = 1; i < 16; i++) {
+			for (int i = 1; i < 14; i++) {
 				District d = districts.get((int) (Math.random() * districts.size()));
 				if (!d.isOccupied())
 					troops.add(new Troop(this, "China" + i + "", (int) (5 * Math.random()), d, false));
@@ -101,16 +120,9 @@ public class Nation {
 			}
 			break;
 		case "Bhutan":
-			for (int i = 1; i < 2; i++) {
-				District d = districts.get((int) (Math.random() * districts.size()));
-				if (!d.isOccupied())
-					troops.add(new Troop(this, "Bhutan" + i + "", 15, d, false));
-				else
-					i--;
-			}
 			break;
 		case "Nepal":
-			for (int i = 1; i < 3; i++) {
+			for (int i = 1; i < 2; i++) {
 				District d = districts.get((int) (Math.random() * districts.size()));
 				if (!d.isOccupied())
 					troops.add(new Troop(this, "Nepal" + i + "", (int) (5 * Math.random()), d, false));
@@ -119,7 +131,7 @@ public class Nation {
 			}
 			break;
 		case "Bangladesh":
-			for (int i = 1; i < 4; i++) {
+			for (int i = 1; i < 3; i++) {
 				District d = districts.get((int) (Math.random() * districts.size()));
 				if (!d.isOccupied())
 					troops.add(new Troop(this, "Bangladesh" + i + "", (int) (5 * Math.random()), d, false));
@@ -128,7 +140,7 @@ public class Nation {
 			}
 			break;
 		case "Pakistan":
-			for (int i = 1; i < 7; i++) {
+			for (int i = 1; i < 3; i++) {
 				District d = districts.get((int) (Math.random() * districts.size()));
 				if (!d.isOccupied())
 					troops.add(new Troop(this, "Pakistan" + i + "", (int) (5 * Math.random()), d, false));
@@ -137,7 +149,7 @@ public class Nation {
 			}
 			break;
 		case "Afghanistan":
-			for (int i = 1; i < 4; i++) {
+			for (int i = 1; i < 3; i++) {
 				District d = districts.get((int) (Math.random() * districts.size()));
 				if (!d.isOccupied())
 					troops.add(new Troop(this, "Afghanistan" + i + "", (int) (5 * Math.random()), d, false));
@@ -243,7 +255,7 @@ public class Nation {
 			}
 			break;
 		case "Mongolia":
-			for (int i = 1; i < 3; i++) {
+			for (int i = 1; i < 1; i++) {
 				District d = districts.get((int) (Math.random() * districts.size()));
 				if (!d.isOccupied())
 					troops.add(new Troop(this, "Mongolia" + i + "", (int) (5 * Math.random()), d, false));
@@ -261,7 +273,7 @@ public class Nation {
 			}
 			break;
 		case "South Korea":
-			for (int i = 1; i < 3; i++) {
+			for (int i = 1; i < 2; i++) {
 				District d = districts.get((int) (Math.random() * districts.size()));
 				if (!d.isOccupied())
 					troops.add(new Troop(this, "South Korea" + i + "", (int) (5 * Math.random()), d, false));
@@ -320,7 +332,7 @@ public class Nation {
 			}
 			break;
 		case "Bhutan":
-			for (int i = 1; i < 2; i++) {
+			for (int i = 1; i < 1; i++) {
 				District d = districts.get((int) (Math.random() * districts.size()));
 				if (!d.isOccupied())
 					troops.add(new ArmoredDivision(this, "Bhutan" + i + "", 15, d, false));
@@ -338,7 +350,7 @@ public class Nation {
 			}
 			break;
 		case "Bangladesh":
-			for (int i = 1; i < 4; i++) {
+			for (int i = 1; i < 3; i++) {
 				District d = districts.get((int) (Math.random() * districts.size()));
 				if (!d.isOccupied())
 					troops.add(new ArmoredDivision(this, "Bangladesh" + i + "", (int) (5 * Math.random()), d, false));
@@ -539,7 +551,7 @@ public class Nation {
 			}
 			break;
 		case "Bhutan":
-			for (int i = 1; i < 2; i++) {
+			for (int i = 1; i < 1; i++) {
 				District d = districts.get((int) (Math.random() * districts.size()));
 				if (!d.isOccupied())
 					troops.add(new Tank(this, "Bhutan" + i + "", 15, d, false));
@@ -557,7 +569,7 @@ public class Nation {
 			}
 			break;
 		case "Bangladesh":
-			for (int i = 1; i < 4; i++) {
+			for (int i = 1; i < 2; i++) {
 				District d = districts.get((int) (Math.random() * districts.size()));
 				if (!d.isOccupied())
 					troops.add(new Tank(this, "Bangladesh" + i + "", (int) (5 * Math.random()), d, false));
@@ -566,7 +578,7 @@ public class Nation {
 			}
 			break;
 		case "Pakistan":
-			for (int i = 1; i < 7; i++) {
+			for (int i = 1; i < 3; i++) {
 				District d = districts.get((int) (Math.random() * districts.size()));
 				if (!d.isOccupied())
 					troops.add(new Tank(this, "Pakistan" + i + "", (int) (5 * Math.random()), d, false));
@@ -575,7 +587,7 @@ public class Nation {
 			}
 			break;
 		case "Afghanistan":
-			for (int i = 1; i < 4; i++) {
+			for (int i = 1; i < 3; i++) {
 				District d = districts.get((int) (Math.random() * districts.size()));
 				if (!d.isOccupied())
 					troops.add(new Tank(this, "Afghanistan" + i + "", (int) (5 * Math.random()), d, false));
@@ -584,7 +596,7 @@ public class Nation {
 			}
 			break;
 		case "Myanmar":
-			for (int i = 1; i < 5; i++) {
+			for (int i = 1; i < 3; i++) {
 				District d = districts.get((int) (Math.random() * districts.size()));
 				if (!d.isOccupied())
 					troops.add(new Tank(this, "Myanmar" + i + "", (int) (5 * Math.random()), d, false));
@@ -734,7 +746,7 @@ public class Nation {
 		case "Russia":
 			break;
 		case "Mongolia":
-			districts.add(new District("Hovd"));
+			districts.add(new District("Ulan Bator"));
 			districts.add(new District("Uvs"));
 			districts.add(new District("Govi-Altai"));
 			districts.add(new District("Hovsgol"));
@@ -750,8 +762,19 @@ public class Nation {
 			districts.add(new District("PiYongang Namdo"));
 			districts.add(new District("Pyongyang"));
 			districts.add(new District("Kangwon-Do"));
+			districts.add(new District("Kimchaek"));
+			districts.add(new District("Hamhung"));
 			break;
 		case "South Korea":
+			districts.add(new District("Incheon"));
+			districts.add(new District("Seoul"));
+			districts.add(new District("Gangwon"));
+			districts.add(new District("Mitan-myeon"));
+			districts.add(new District("Andong"));
+			districts.add(new District("Busan"));
+			districts.add(new District("Gwangju"));
+			districts.add(new District("Daegu"));
+			districts.add(new District("Daejon"));
 			break;
 		case "Japan":
 			break;
@@ -849,10 +872,21 @@ public class Nation {
 			districts.add(new District("Chaoyang"));
 			districts.add(new District("Harbin"));
 			districts.add(new District("Suihua"));
+			districts.add(new District("Xiangxi"));
+			districts.add(new District("Baoding"));
+			districts.add(new District("Linyii"));
+			districts.add(new District("Shijiazhuang"));
 			break;
 		case "Bhutan":
+			districts.add(new District("Thimphu"));
 			break;
 		case "Nepal":
+			districts.add(new District("Patan"));
+			districts.add(new District("Jayapritvi"));
+			districts.add(new District("Kankri"));
+			districts.add(new District("Kathmandu"));
+			districts.add(new District("Dharan"));
+			districts.add(new District("Dhamak"));
 			break;
 		case "India":
 			districts.add(new District("Delhi"));
@@ -947,11 +981,39 @@ public class Nation {
 			districts.add(new District("Ganghinagar"));
 			break;
 		case "Bangladesh":
-
+			districts.add(new District("Rajshahi"));
+			districts.add(new District("Habiganj"));
+			districts.add(new District("Dhaka"));
+			districts.add(new District("Khulna"));
+			districts.add(new District("Chittagong"));
 			break;
 		case "Pakistan":
+			districts.add(new District("Peshawar"));
+			districts.add(new District("Islamabad"));
+			districts.add(new District("Rawalpindi"));
+			districts.add(new District("Lahore"));
+			districts.add(new District("Bahawalpur"));
+			districts.add(new District("Kharipur"));
+			districts.add(new District("Nawabshah"));
+			districts.add(new District("Karachi"));
+			districts.add(new District("Hyderbad"));
+			districts.add(new District("Balochistan"));
+			districts.add(new District("Quetta"));
+			districts.add(new District("Khyber"));
+			districts.add(new District("Multan"));
+			districts.add(new District("Faisalabad"));
+			districts.add(new District("Rahim Yar Khan"));
+			districts.add(new District("Gwadar"));
 			break;
 		case "Afghanistan":
+			districts.add(new District("Jalalabad"));
+			districts.add(new District("Kabul"));
+			districts.add(new District("Kunduz"));
+			districts.add(new District("Mazar-e-Shariff"));
+			districts.add(new District("Herat"));
+			districts.add(new District("Pasaband"));
+			districts.add(new District("Lashkargah"));
+			districts.add(new District("Marjah"));
 			break;
 		case "Myanmar":
 			break;
@@ -974,14 +1036,16 @@ public class Nation {
 		case "Brunei":
 			break;
 		case "Sri Lanka":
+			districts.add(new District("Kandy"));
+			districts.add(new District("Colombo"));
+			districts.add(new District("Arunadhapura"));
+			districts.add(new District("Batticaloa"));
 			break;
 		default:
+			break;
 		}
-		for (
-
-		District d : districts)
+		for (District d : districts)
 			d.setOccupiedBy(this);
-
 	}
 
 	public int getWealth() {
