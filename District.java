@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 public class District {
 	private int[] coordinates;
 	private String name;
-	private Nation occupied, belongsTo;
+	private Nation occupied;
 	private boolean hasMajorCity;
 	private boolean hasMajorIndustry, hasAirfield;
 
@@ -23,13 +23,12 @@ public class District {
 		name = regional;
 		// occupied = occupation;
 		coordinates = getCoordinates();
-		// hasMajorCity = bigCity;
-		// hasMajorIndustry = industry;
+		hasMajorCity = hasMajorCity();
+		hasMajorIndustry = hasMajorIndustry();
 	}
-	
-	public String toString()
-	{
-		return "{"+getX()+","+getY()+"}";
+
+	public String toString() {
+		return "{" + getX() + "," + getY() + "}";
 	}
 
 	/**
@@ -45,9 +44,7 @@ public class District {
 		hasAirfield = false;
 	}
 
-	
-	protected Troop getTroop()
-	{
+	protected Troop getTroop() {
 		ArrayList<Troop> ref = occupied.getTroops();
 		for (Troop t : ref) {
 			if (t.getDistrict().equals(this))
@@ -55,21 +52,20 @@ public class District {
 		}
 		return null;
 	}
-	
-	protected String getStatus()
-	{
+
+	protected String getStatus() {
 		String s = "";
-		if(hasMajorCity())
+		if (hasMajorCity)
 			s += "This district has a large city ";
-		if(hasMajorIndustry())
+		if (hasMajorIndustry)
 			s += ",industry ";
-		if(hasAirfield())
+		if (hasAirfield)
 			s += ",airfield ";
-		else if (!(hasAirfield() || hasMajorIndustry() || hasMajorCity()))
+		else if (!(hasAirfield || hasMajorIndustry || hasMajorCity))
 			s = "this city has no infrastructure";
 		return s;
 	}
-	
+
 	/**
 	 * sets distict occupied
 	 * 
@@ -473,11 +469,19 @@ public class District {
 			return new int[] { 950, 190 };
 		case "Suihua":
 			return new int[] { 994, 135 };
+		case "Xiangxi":
+			return new int[] { 994, 135 };
+		case "Baoding":
+			return new int[] { 828, 325 };
+		case "Linyii":
+			return new int[] { 862, 370 };
+		case "Shijiazhuang":
+			return new int[] { 796, 321 };
 		/*
 		 * Mongolian Districts
 		 */
-		case "Hovd":
-			return new int[] { 480, 160 };
+		case "Ulan Bator":
+			return new int[] { 607, 106 };
 		case "Uvs":
 			return new int[] { 525, 125 };
 		case "Govi-Altai":
@@ -504,7 +508,7 @@ public class District {
 		case "Hamgyong-Bukto":
 			return new int[] { 1060, 255 };
 		case "PiYongang Namdo":
-			return new int[] { 1005, 305 };
+			return new int[] { 1004, 324 };
 		case "Pyongyang":
 			return new int[] { 1005, 315 };
 		case "Kangwon-Do":
@@ -564,9 +568,13 @@ public class District {
 		case "Khyber":
 			return new int[] { 140, 414 };
 		case "Multan":
-			return new int[] { 145, 471 ;}
+			return new int[] { 145, 471 };
 		case "Faisalabad":
 			return new int[] { 159, 436 };
+		case "Rahim Yar Khan":
+			return new int[] { 40, 486 };
+		case "Gwadar":
+			return new int[] { 30, 544 };
 		/**
 		 * Nepal
 		 */
@@ -628,11 +636,74 @@ public class District {
 			return new int[] { 70, 400 };
 		case "Lashkargah":
 			return new int[] { 60, 455 };
+		case "Marjah":
+			return new int[] { 15, 430 };
+		/**
+		 * Burma
+		 */
+		case "Bago":
+			return new int[] { 547, 682 };
+		case "Yangon":
+			return new int[] { 537, 689 };
+		case "Panthein":
+			return new int[] { 519, 695 };
+		case "Sittwe":
+			return new int[] { 495, 635 };
+		case "Kale":
+			return new int[] { 508, 592 };
+		case "Hinthada":
+			return new int[] { 524, 652 };
+		case "Pyay":
+			return new int[] { 520, 635 };
+		case "Mandalay":
+			return new int[] { 530, 600 };
+		case "South Kachin":
+			return new int[] { 544, 555 };
+		case "North Kachin":
+			return new int[] { 557, 525 };
+		case "Shan":
+			return new int[] { 564, 596 };
+		case "Loikaw":
+			return new int[] { 570, 630 };
+		case "Kaiyin":
+			return new int[] { 548, 663 };
+		case "Mon":
+			return new int[] { 568, 710 };
+		case "Thanintharyi":
+			return new int[] { 582, 772 };
+		/**
+		 * Thailand
+		 */
+		case "Chiang Mai":
+			return new int[] { 579, 665 };
+		case "Chiang Rai":
+			return new int[] { 599, 655 };
+		case "Khon Kaen":
+			return new int[] { 652, 690 };
+		case "Surin":
+			return new int[] { 668, 721 };
+		case "Ayutthaya":
+			return new int[] { 604, 728 };
+		case "Bangkok":
+			return new int[] { 608, 746 };
+		case "Phet Buri":
+			return new int[] { 592, 754 };
+		case "Ranong":
+			return new int[] { 584, 824 };
+		case "Yala":
+			return new int[] { 617, 863 };
+		case "Phichit":
+			return new int[] { 608, 695 };
+		case "Tak":
+			return new int[] { 585, 700 };
+		case "Phuket":
+			return new int[] { 590, 847 };
 		}
 	}
 
 	/**
-	 * checks if the district has a major city
+	 * 
+	 * ** } /** checks if the district has a major city
 	 * 
 	 * @return true if the district has a major city
 	 */
@@ -1004,6 +1075,10 @@ public class District {
 			return true;
 		case "Suihua":
 			return false;
+		case "Xiangxi":
+			return false;
+		case "Baoding":
+			return false;
 		/*
 		 * Mongolian Districts
 		 */
@@ -1096,18 +1171,22 @@ public class District {
 			return true;
 		case "Faisalabad":
 			return false;
-		/** 
- 		 * Sri Lanka 
- 		 */ 
- 		case "Kandy": 
- 			return true; 
- 		case "Colombo": 
- 			return true; 
- 		case "Arunadhapura": 
- 			return false; 
- 		case "Batticaloa": 
- 			return false; 
- 		/**
+		case "Rahim Yar Khan":
+			return false;
+		case "Gwadar":
+			return false;
+		/**
+		 * Sri Lanka
+		 */
+		case "Kandy":
+			return true;
+		case "Colombo":
+			return true;
+		case "Arunadhapura":
+			return false;
+		case "Batticaloa":
+			return false;
+		/**
 		 * Nepal
 		 */
 		case "Patan":
@@ -1627,18 +1706,18 @@ public class District {
 			return true;
 		case "Faisalabad":
 			return false;
-		/** 
- 		 * Sri Lanka 
- 		 */ 
- 		case "Kandy": 
- 			return false; 
- 		case "Colombo": 
- 			return true; 
- 		case "Arunadhapura": 
- 			return false; 
- 		case "Batticaloa": 
- 			return false;
- 		 /**
+		/**
+		 * Sri Lanka
+		 */
+		case "Kandy":
+			return false;
+		case "Colombo":
+			return true;
+		case "Arunadhapura":
+			return false;
+		case "Batticaloa":
+			return false;
+		/**
 		 * Nepal
 		 */
 		case "Patan":
@@ -2158,18 +2237,18 @@ public class District {
 			return false;
 		case "Faisalabad":
 			return false;
-		/** 
- 		 * Sri Lanka 
- 		 */ 
- 		case "Kandy": 
- 			return false; 
- 		case "Colombo": 
- 			return false; 
- 		case "Arunadhapura": 
- 			return false; 
- 		case "Batticaloa": 
- 			return true;
- 		 /**
+		/**
+		 * Sri Lanka
+		 */
+		case "Kandy":
+			return false;
+		case "Colombo":
+			return false;
+		case "Arunadhapura":
+			return false;
+		case "Batticaloa":
+			return true;
+		/**
 		 * Nepal
 		 */
 		case "Patan":
@@ -2201,10 +2280,9 @@ public class District {
 		case "Khulna":
 			return true;
 		case "Chittagong":
-			return false;
-		/**
-		 * Afghanistan
-		 */
+			return false;/**
+							 * Afghanistan
+							 */
 		case "Jalalabad":
 			return false;
 		case "Kabul":
@@ -2224,10 +2302,15 @@ public class District {
 		}
 	}
 
-	protected ArrayList<District> canAirStrike(District thisOne) {
+	protected ArrayList<District> canAirStrike() {
 		ArrayList<District> canStrike = new ArrayList<District>();
+		WarGameBoard w = new WarGameBoard();
 		// get an ArrayList of all Districts and then check if the distance is
-		// less than 1000
+		for (Nation n : w.getNations())
+			for (District d : n.getDistricts())
+				if (inRange(d))
+					canStrike.add(d);
+		// less than 500
 		return canStrike;
 	}
 
@@ -2252,8 +2335,20 @@ public class District {
 		return occupied;
 	}
 
-	protected Nation belongsTo() {
-		return belongsTo;
+	private boolean inRange(District d) {
+		return Math.sqrt((this.getX() - d.getX()) * (this.getX() - d.getX())
+				+ (this.getY() - d.getY()) * (this.getY() - d.getY())) <= 500;
+	}
+
+	public void launchAirstrike(District d) {
+		if (hasAirfield) {
+			if (d.getTroop() == null) {
+				d.hasMajorIndustry = false;
+				d.hasAirfield = false;
+			} else
+				d.getTroop().getAirStruck();
+		} else
+			setMessage("This district has no airfield, therefore you cannot launch airstrike");
 	}
 
 	protected void buildIndustry() {
@@ -2273,7 +2368,7 @@ public class District {
 	}
 
 	protected void setMessage(String message) {
-		JOptionPane.showMessageDialog(null, "Problem!", message, JOptionPane.INFORMATION_MESSAGE, null);
+		JOptionPane.showMessageDialog(null, message, "Problem!", JOptionPane.INFORMATION_MESSAGE, null);
 	}
 
 	protected void buildAirfield() {
